@@ -1,3 +1,5 @@
+# main.py
+
 from flask import Flask
 from flask import jsonify
 from flask import request
@@ -7,14 +9,14 @@ from flask_cors import CORS
 app = Flask(__name__)
 
 # Stringa di connessione al DB
-app.config["MONGO_URI"] = "mongodb+srv://admin:UVQ6Vise7WOE1ski@cluster0.fudiw.mongodb.net/Relab?retryWrites=true&w=majority" #Importante qui va specificato il nome del DB
+app.config["MONGO_URI"] = "**TUO_URL_DI_CONNESSIONE**" #Importante qui va specificato il nome del DB
 
 mongo = PyMongo(app)
 # Per rispondere alle chiamate cross origin
 CORS(app)
 
 # Annotation that allows the function to be hit at the specific URL.
-@app.route("/pippo")
+@app.route("/")
 # Generic Python functino that returns "Hello world!"
 def index():
     return "Hello world!"
